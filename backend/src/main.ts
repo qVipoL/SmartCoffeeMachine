@@ -1,10 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { Server } from './server';
 
 async function main() {
-  const app = await NestFactory.create(AppModule);
-  app.enableCors();
-  await app.listen(5000);
+  const server = new Server(await NestFactory.create(AppModule));
+
+  server.init();
+  server.start();
 }
 
 main();

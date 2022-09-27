@@ -15,7 +15,6 @@ export class Server {
     this.app.enableCors({
       origin: this.config.get<string>('ORIGIN'),
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      credentials: true,
     });
 
     const swaggerConfig = new DocumentBuilder()

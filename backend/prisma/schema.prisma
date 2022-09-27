@@ -8,12 +8,18 @@ datasource db {
 }
 
 model CoffeOrder {
-  id          String    @id @default(cuid())
-  user        String
-  time        DateTime
-  type        String
-  isCompleted Boolean   @default(false)
+  id       String            @id @default(cuid())
+  fullname String
+  time     DateTime
+  type     String
+  status   CoffeeOrderStatus @default(PENDING)
 
   updatedAt DateTime @updatedAt
   createdAt DateTime @default(now())
+}
+
+enum CoffeeOrderStatus {
+  PENDING
+  IN_PREPARATION
+  COMPLETE
 }
