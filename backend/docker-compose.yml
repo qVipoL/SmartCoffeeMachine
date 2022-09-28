@@ -3,6 +3,7 @@ version: '3'
 services:
   main:
     container_name: main
+    user: root
     build:
       dockerfile: Dockerfile
       context: .
@@ -12,10 +13,9 @@ services:
       - /app/node_modules
     env_file:
       - .env
-    command: yarn start:dev
+    command: yarn start:dev:prisma
     ports:
       - 5000:5000
-    restart: always
     depends_on:
       - postgres
 
@@ -26,11 +26,11 @@ services:
       - .env
     environment:
       PG_DATA: /var/lib/postgresql/data
+      POSTGRES_PASSWORD: 102030
     ports:
       - 5432:5432
     volumes:
       - pgdata:/var/lib/postgresql/data
-    restart: always
 
 volumes:
   pgdata:

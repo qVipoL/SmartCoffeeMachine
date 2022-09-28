@@ -10,8 +10,6 @@ RUN yarn install
 
 COPY . .
 
-USER node
-
 # BUILD
 
 FROM node:18-alpine As build
@@ -27,8 +25,6 @@ COPY . .
 RUN yarn build
 
 RUN yarn build--only=production && yarn clean --force
-
-USER node
 
 # PRODUCTION
 

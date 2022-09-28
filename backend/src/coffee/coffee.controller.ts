@@ -34,7 +34,7 @@ export class CoffeeController {
   @ApiOperation({ summary: 'Get current order in preparation' })
   @ApiResponse({ status: 200 })
   @HttpCode(HttpStatus.OK)
-  @Get()
+  @Get('/in-preparation')
   async getCurrentOrder() {
     return await this.coffeeService.getCurrentOrder();
   }
