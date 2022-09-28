@@ -25,8 +25,6 @@ docker compose up --build
 
 ##
 
-##
-
 ### React App (Frontend) 🤳
 
 The React App runs on port 3000
