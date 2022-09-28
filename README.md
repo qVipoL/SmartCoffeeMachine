@@ -1,6 +1,6 @@
 # Smart Coffe Machine ☕ (aidock)
 
-## Info
+## Info ℹ
 
 A Smart coffee machine project buit with: NestJS, PostgreSQL, Redis, BullMQ, Prisma and ReactJS + MUI.
 What can you do?
