@@ -37,3 +37,9 @@ yarn start
 ```
 
 ##
+
+### Author
+
+👤 **Andrey Burtsev**
+
+- Email: a26161553@gmail.com
