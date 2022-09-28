@@ -71,19 +71,21 @@ export class CoffeeService implements OnModuleInit {
   async getAllOrders(query: any) {
     const { lastMonth } = query;
 
-    const curDate = new Date().toISOString().split('T')[0];
+    const curDate = new Date().toISOString();
     let monthStartDate: Date | string = new Date();
     monthStartDate.setDate(monthStartDate.getDate() - 30);
-    monthStartDate = monthStartDate.toISOString().split('T')[0];
+    monthStartDate = monthStartDate.toISOString();
 
     return await this.prisma.coffeeOrder.findMany({
       where: {
-        ...(lastMonth ?? {
-          time: {
-            lte: curDate,
-            gte: monthStartDate,
-          },
-        }),
+        ...(lastMonth === 'true'
+          ? {
+              time: {
+                lte: new Date(curDate),
+                gte: new Date(monthStartDate),
+              },
+            }
+          : null),
       },
     });
   }

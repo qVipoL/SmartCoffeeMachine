@@ -7,7 +7,7 @@ import {
   Get,
   Query,
 } from '@nestjs/common';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiResponse, ApiQuery } from '@nestjs/swagger';
 import { CoffeeService } from './coffee.service';
 import { CoffeeOrderDto } from './dto/coffee-order.dto';
 
@@ -24,6 +24,11 @@ export class CoffeeController {
   }
 
   @ApiOperation({ summary: 'Get all orders' })
+  @ApiQuery({
+    name: 'lastMonth',
+    required: false,
+    type: Boolean,
+  })
   @ApiResponse({ status: 200 })
   @HttpCode(HttpStatus.OK)
   @Get()
