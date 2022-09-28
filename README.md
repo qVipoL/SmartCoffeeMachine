@@ -2,7 +2,7 @@
 
 ## Info
 
-A Smart coffee machine project buit with: NestJS, PostgreSQL, Redis, BullMQ and ReactJS.
+A Smart coffee machine project buit with: NestJS, PostgreSQL, Redis, BullMQ, Prisma and ReactJS + MUI.
 What can you do?
 
 - You can order for a specific date and time.
