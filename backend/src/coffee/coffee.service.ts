@@ -93,7 +93,7 @@ export class CoffeeService implements OnModuleInit {
   async getCurrentOrder() {
     return (await this.coffeeOrderQueue.getJobs(['active'])).map((job) => ({
       ...job.data,
-      status: 'IN_PREPARATION'
+      status: 'IN_PREPARATION',
     }));
   }
 }
