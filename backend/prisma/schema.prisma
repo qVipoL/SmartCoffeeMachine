@@ -7,11 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model CoffeOrder {
+model CoffeeOrder {
   id       String            @id @default(cuid())
   fullname String
   time     DateTime
   type     String
+  priority Int               @default(0)
   status   CoffeeOrderStatus @default(PENDING)
 
   updatedAt DateTime @updatedAt

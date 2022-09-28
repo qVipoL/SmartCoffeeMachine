@@ -13,7 +13,7 @@ import { CoffeeOrderDto } from './dto/coffee-order.dto';
 
 @Controller('coffee')
 export class CoffeeController {
-  constructor(private coffeeService: CoffeeService) {}
+  constructor(private readonly coffeeService: CoffeeService) {}
 
   @ApiOperation({ summary: 'Create a coffee order' })
   @ApiResponse({ status: 200 })
