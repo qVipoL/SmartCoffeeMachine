@@ -1,4 +1,4 @@
-# Smart Coffe Machine (aidock)
+# Smart Coffe Machine ☕ (aidock)
 
 ## Info
 
