@@ -14,6 +14,7 @@ What can you do?
 ### Server (Backend) 💾
 
 The Server runs on port 5000
+Api Documentation at localhost:5000/docs
 Run the following commands (you must have docker installed):
 
 ```

@@ -10,7 +10,7 @@ import CoffeeOrderDto from "src/dto/CoffeeOrder";
 
 const columns = [
   {
-    field: "fullName",
+    field: "fullname",
     headerName: "Full name",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
@@ -48,8 +48,16 @@ const HomePage: FC = () => {
       const activeOrders = await CoffeeOrderService.getActiveOrders();
       const last30DaysOrders = await CoffeeOrderService.getLast30Days();
 
-      setActiveOrders(activeOrders);
-      setLast30DaysOrders(last30DaysOrders);
+      setActiveOrders(
+        activeOrders.map((order) => {
+          return { ...order, time: new Date(order.time).toLocaleString() };
+        })
+      );
+      setLast30DaysOrders(
+        last30DaysOrders.map((order) => {
+          return { ...order, time: new Date(order.time).toLocaleString() };
+        })
+      );
     };
 
     loadOrders();

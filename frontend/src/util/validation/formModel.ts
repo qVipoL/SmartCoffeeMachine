@@ -1,7 +1,7 @@
 const formModel = {
   formFields: {
-    fullName: {
-      name: "fullName",
+    fullname: {
+      name: "fullname",
       label: "Full name*",
       requiredErrorMsg: "Full name is required",
     },

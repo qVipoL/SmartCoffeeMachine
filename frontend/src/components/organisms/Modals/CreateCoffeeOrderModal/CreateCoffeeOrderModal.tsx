@@ -31,8 +31,8 @@ const CreateCoffeeOrderModal: FC<CreateCoffeeOrderModalProps> = ({
     setIsLoading(true);
 
     await CoffeeOrderService.createCoffeeOrder({
-      fullname: values.fullName,
-      time: new Date(values.date).toISOString(),
+      fullname: values.fullname,
+      datetime: values.datetime.toISOString(),
       type: values.type,
       isBoss: values.isBoss === "true" ? true : false,
     });

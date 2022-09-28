@@ -10,7 +10,7 @@ export default class CoffeeOrderService {
     return (await API.get<CoffeeOrderDto[]>("/coffee?lastMonth=true")).data;
   }
 
-  static async createCoffeeOrder(body: CoffeeOrderDto) {
+  static async createCoffeeOrder(body: any) {
     return (await API.post<CoffeeOrderDto>("/coffee", body)).data;
   }
 }

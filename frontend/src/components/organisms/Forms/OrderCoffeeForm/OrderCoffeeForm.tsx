@@ -14,7 +14,7 @@ interface OrderCoffeeFormProps {
 
 const OrderCoffeeForm: FC<OrderCoffeeFormProps> = (props) => {
   const {
-    formFields: { fullName, datetime, type, isBoss },
+    formFields: { fullname, datetime, type, isBoss },
   } = props;
 
   const [field, , helper] = useField(datetime);
@@ -28,8 +28,8 @@ const OrderCoffeeForm: FC<OrderCoffeeFormProps> = (props) => {
       <Grid item xs={12} sm={7}>
         <InputField
           defaultProps={{
-            name: fullName.name,
-            label: fullName.label,
+            name: fullname.name,
+            label: fullname.label,
             fullWidth: true,
             variant: "filled",
           }}

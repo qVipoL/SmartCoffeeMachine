@@ -2,11 +2,11 @@ import dayjs from "dayjs";
 import formModel from "./formModel";
 
 const {
-  formFields: { fullName, type, datetime, isBoss },
+  formFields: { fullname, type, datetime, isBoss },
 } = formModel;
 
 const initialValues = {
-  [fullName.name]: "",
+  [fullname.name]: "",
   [type.name]: "",
   [datetime.name]: dayjs(),
   [isBoss.name]: "",
