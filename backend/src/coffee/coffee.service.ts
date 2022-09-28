@@ -91,7 +91,6 @@ export class CoffeeService implements OnModuleInit {
   }
 
   async getCurrentOrder() {
-    const [activeOrder] = await this.coffeeOrderQueue.getJobs(['active']);
-    return activeOrder;
+    return await this.coffeeOrderQueue.getJobs(['active']);
   }
 }
